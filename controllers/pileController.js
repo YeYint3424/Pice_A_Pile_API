@@ -23,11 +23,7 @@ const ansForSingle = (req,res) => {
 const Answer = (req,res) => {
     const ansId = parseInt(req.params.AnswerId,10);
     const qId = parseInt(req.params.QuestionId,10);
-    console.log('ans'+ansId);
-    console.log('qus'+ qId)
-    Data.Answers.map((ans)=>{
-        console.log('ans',ans["QuestionId"]);
-    })
+
     const ans = Data.Answers.find(ans=>ans['QuestionId']===qId && ans["AnswerId"]===ansId)
 
     if(ans!=null){
