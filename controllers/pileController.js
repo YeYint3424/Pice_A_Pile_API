@@ -20,8 +20,19 @@ const ansForSingle = (req,res) => {
     }
 }
 
+const Answer = (req,res) => {
+    const ansId = req.params.AnswerId;
+    const qId = req.params.AnswerId;
+    const ans = Data.Answers.filter(ans=>ans.AnswerId==ansId && ans.QuestionId==qId)
+    if(ans!=null){
+        res.json(ans)
+    }else{
+        console.log("Error in answer...");
+    }
+}
 
 module.exports = {
     allQuestions,
-    ansForSingle
+    ansForSingle,
+    Answer
 }

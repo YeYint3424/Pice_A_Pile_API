@@ -5,5 +5,6 @@ const pileController = require('../controllers/pileController')
 
 router.get('/all-questions', pileController.allQuestions)
 router.get('/:id', pileController.ansForSingle)
+router.get('/:QuestionId/:AnswerId', pileController.Answer)
 
 module.exports = router
