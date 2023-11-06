@@ -35,7 +35,6 @@ const Answer = (req,res) => {
 
 const GetQuestionById =  async(req,res) => {
     const QuestionId = parseInt(req.params.QuestionId,10)
-    console.log(QuestionId);
     const question = await Data.Questions.find(q=>q.QuestionId===QuestionId)
 
     if(question!=null){
