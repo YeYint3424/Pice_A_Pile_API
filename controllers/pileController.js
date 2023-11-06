@@ -33,8 +33,21 @@ const Answer = (req,res) => {
     }
 }
 
+const GetQuestionById = (req,res) => {
+    const QuestionId = parseInt(req.params.QuestionId,10)
+
+    const question = Data.Questions.find(q=>q.QuestionId===QuestionId)
+
+    if(question!=null){
+        res.json(question)
+    }else{
+        console.log("Error in Get QuestionById...");
+    }
+}
+
 module.exports = {
     allQuestions,
     ansForSingle,
-    Answer
+    Answer,
+    GetQuestionById
 }
