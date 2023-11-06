@@ -33,10 +33,10 @@ const Answer = (req,res) => {
     }
 }
 
-const GetQuestionById = (req,res) => {
+const GetQuestionById =  async(req,res) => {
     const QuestionId = parseInt(req.params.QuestionId,10)
-
-    const question = Data.Questions.find(q=>q.QuestionId===QuestionId)
+    console.log(QuestionId);
+    const question = await Data.Questions.find(q=>q.QuestionId===QuestionId)
 
     if(question!=null){
         res.json(question)
